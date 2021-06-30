@@ -42,7 +42,7 @@ class ControllerAdress extends Controller
    			header('Location: /adress/list/'); 
    		}
    		else {
-			$this->view->generate('view-template.php', 'adress/view-add.php', 'adress', $res);
+			$this->view->generate('view-template.php', 'adress/view-add.php', 'adress');
    		}
 	}
 
