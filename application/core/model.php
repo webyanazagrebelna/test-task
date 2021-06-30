@@ -27,7 +27,7 @@ class Model
     function linkAdmin()
     {
     	$this->link->query("CREATE USER IF NOT EXISTS admin@localhost IDENTIFIED BY '12345'");
-		$this->link->query("GRANT SELECT,DELETE,INSERT,UPDATE ON adressbook.adressbook TO admin@localhost");
+		$this->link->query("GRANT SELECT,DELETE,INSERT,UPDATE ON adressbook.adress TO admin@localhost");
 		$this->link->query("FLUSH PRIVILEGES");
 		try {
 		$linkAdmin = new PDO("mysql:host=localhost; dbname=adressbook", "admin", "12345");

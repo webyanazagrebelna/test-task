@@ -1,30 +1,36 @@
 <?php
-class ModelAdmin extends Model
+class ModelAdress extends Model
 {
 
-	function listing()
+	function list()
 	{
-		$res = $this->linkAdmin()->prepare('SELECT * FROM guestbook');
+		$res = $this->linkAdmin()->prepare('SELECT * FROM adress');
 		$res->execute();
 		$res = $res->fetchAll();
         return $res;
 	}
+
+	function add($name, $email, $comment)
+	{
+		$res = $this->linkGuest()->prepare('INSERT INTO adress (date, name, email, comment) VALUES (NOW(), ?, ?, ?)');
+		$res->execute(array($name, $email, $comment));		
+	}
 	
 	function editEmpty($id)
 	{
-		$res = $this->linkAdmin()->prepare('SELECT * FROM guestbook WHERE id_guestbook=?');
+		$res = $this->linkAdmin()->prepare('SELECT * FROM adress WHERE id=?');
 		$res->execute(array($id));
     	$res = $res->fetch();
         return $res;
 	}
 	
 	function editIsset($id, $comment) {
-		$res = $this->linkAdmin()->prepare('UPDATE guestbook SET comment=? WHERE id_guestbook=?');
+		$res = $this->linkAdmin()->prepare('UPDATE adress SET comment=? WHERE id=?');
 		$res->execute(array($comment, $id));
 	}
 
 	function del($id) {
-		$res = $this->linkAdmin()->prepare('DELETE FROM guestbook WHERE id_guestbook=?');
+		$res = $this->linkAdmin()->prepare('DELETE FROM adress WHERE id=?');
 		$res->execute(array($id));
 	}	
 
