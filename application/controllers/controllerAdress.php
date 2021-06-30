@@ -23,6 +23,14 @@ class ControllerAdress extends Controller
    			$street = strip_tags($_POST['street']);
    			$city = strip_tags($_POST['city']);
    			$country = strip_tags($_POST['country']);
+
+   			$name = substr($name, 0, 50);
+   			$surname = substr($surname, 0, 50);
+   			$phone = substr($phone, 0, 50);
+   			$street = substr($street, 0, 50);
+   			$city = substr($city, 0, 50);
+   			$country = substr($country, 0, 50);
+
    			$this->model->add($name, $surname, $phone, $street, $city, $country);
    			header('Location: /adress/list/'); 
    		}
@@ -40,6 +48,14 @@ class ControllerAdress extends Controller
    			$street = strip_tags($_POST['street']);
    			$city = strip_tags($_POST['city']);
    			$country = strip_tags($_POST['country']);
+
+   			$name = substr($name, 0, 50);
+   			$surname = substr($surname, 0, 50);
+   			$phone = substr($phone, 0, 50);
+   			$street = substr($street, 0, 50);
+   			$city = substr($city, 0, 50);
+   			$country = substr($country, 0, 50);
+
 			$this->model->editIsset($id, $name, $surname, $phone, $street, $city, $country);
 			header('Location: /adress/list/'); 
 		}
