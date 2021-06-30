@@ -17,8 +17,15 @@ class ControllerAdress extends Controller
 	
 	function list()
 	{
-		$res = $this->model->list();
-		$this->view->generate('view-template.php', 'adress/view-list.php', 'adress', $res);
+   		if (!empty($_GET['sort'])) {
+   			$sort = $_GET['sort'];
+			$res = $this->model->list($sort);
+			$this->view->generate('view-template.php', 'adress/view-list.php', 'adress', $res);
+   		}
+   		else {
+			$res = $this->model->list();
+			$this->view->generate('view-template.php', 'adress/view-list.php', 'adress', $res);
+   		}
 	}
 	
 	function add()

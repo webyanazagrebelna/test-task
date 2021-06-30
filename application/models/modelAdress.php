@@ -7,9 +7,12 @@ use Application\Core\Model;
 class ModelAdress extends Model
 {
 
-	function list()
+	function list($sort=null)
 	{
-		$res = $this->linkAdmin()->prepare('SELECT * FROM adress');
+		$orders = array("date", "name", "surname", "phone", "street", "city", "country");
+		$key = array_search($sort, $orders);
+		$order = $orders[$key];
+		$res = $this->linkAdmin()->prepare('SELECT * FROM adress ORDER BY ' . $order);
 		$res->execute();
 		$res = $res->fetchAll();
         return $res;

@@ -1,12 +1,12 @@
 <table>
 	<tr>
-		<th style="width: 10%;">date</th>
-		<th style="width: 10%;">name</th>
-		<th style="width: 10%;">surname</th>
-		<th style="width: 10%;">phone</th>
-		<th style="width: 10%;">street</th>
-		<th style="width: 10%;">city</th>
-		<th style="width: 10%;">country</th>
+		<th style="width: 10%;"><a style="color: blue;" href="/adress/list?sort=date">date</a></th>
+		<th style="width: 10%;"><a style="color: blue;" href="/adress/list?sort=name">name</a></th>
+		<th style="width: 10%;"><a style="color: blue;" href="/adress/list?sort=surname">surname</a></th>
+		<th style="width: 10%;"><a style="color: blue;" href="/adress/list?sort=phone">phone</a></th>
+		<th style="width: 10%;"><a style="color: blue;" href="/adress/list?sort=street">street</a></th>
+		<th style="width: 10%;"><a style="color: blue;" href="/adress/list?sort=city">city</a></th>
+		<th style="width: 10%;"><a style="color: blue;" href="/adress/list?sort=country">country</a></th>
 		<th style="width: 20%;">edit</th>
 		<th style="width: 10%;">delete</th>
 	</tr>
