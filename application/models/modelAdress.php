@@ -10,10 +10,10 @@ class ModelAdress extends Model
         return $res;
 	}
 
-	function add($name, $email, $comment)
+	function add($name, $surname, $phone, $street, $city, $country)
 	{
-		$res = $this->linkGuest()->prepare('INSERT INTO adress (date, name, email, comment) VALUES (NOW(), ?, ?, ?)');
-		$res->execute(array($name, $email, $comment));		
+		$res = $this->linkAdmin()->prepare('INSERT INTO adress (date, name, surname, phone, street, city, country) VALUES (NOW(), ?, ?, ?, ?, ?, ?)');
+		$res->execute(array($name, $surname, $phone, $street, $city, $country));		
 	}
 	
 	function editEmpty($id)

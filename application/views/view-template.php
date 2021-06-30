@@ -30,7 +30,7 @@
           <div class="navbar-collapse collapse">
             <div class="menu">
               <ul class="nav nav-tabs" role="tablist">
-                <li role="presentation"><a href="index.html" <?php if (isset(explode('/', $_SERVER['REQUEST_URI'])[2])) echo 'class="active"'; ?>>Add new adress</a></li>
+                <li role="presentation"><a href="adress/add" >Add new adress</a></li>
               </ul>
             </div>
           </div>

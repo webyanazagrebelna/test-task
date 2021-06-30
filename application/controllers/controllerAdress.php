@@ -11,7 +11,7 @@ class ControllerAdress extends Controller
 	function list()
 	{
 		$res = $this->model->list();
-		$this->view->generate('view-template.php', 'adress/view-list.php', 'Админка', $res);
+		$this->view->generate('view-template.php', 'adress/view-list.php', 'adress', $res);
 	}
 	
 	function add()
@@ -23,11 +23,11 @@ class ControllerAdress extends Controller
    			$street = strip_tags($_POST['street']);
    			$city = strip_tags($_POST['city']);
    			$country = strip_tags($_POST['country']);
-   			$this->model->add($name, $email, $comment);
+   			$this->model->add($name, $surname, $phone, $street, $city, $country);
    			header('Location: /adress/list/'); 
    		}
    		else {
-			$this->view->generate('view-template.php', 'adress/view-add.php', 'Админка', $res);
+			$this->view->generate('view-template.php', 'adress/view-add.php', 'adress', $res);
    		}
 	}
 
@@ -40,7 +40,7 @@ class ControllerAdress extends Controller
 		}
 		else {
 			$res = $this->model->editEmpty($id);		    
-			$this->view->generate('view-template.php', 'adress/view-edit.php', 'Админка', $res);
+			$this->view->generate('view-template.php', 'adress/view-edit.php', 'adress', $res);
 		}
 	}	
 
