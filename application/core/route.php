@@ -1,4 +1,7 @@
 <?php
+
+namespace Application\Core;
+
 class Route
 {
     static function start() 
@@ -26,7 +29,9 @@ class Route
         }
 
         // добавляем префиксы
+        $modelNameNamespace = '\Application\Models\Model'.ucfirst($controllerName);
         $modelName = 'Model'.ucfirst($controllerName);
+        $controllerNameNamespace = '\Application\Controllers\Controller'.ucfirst($controllerName);
         $controllerName = 'Controller'.ucfirst($controllerName);
 
         // подцепляем файл с классом модели (файла модели может и не быть)
@@ -44,15 +49,15 @@ class Route
         		include "application/controllers/".$controllerFile;
         	}
         	else {
-        		throw new Exception();
+        		throw new \Exception();
             }
         }
-        catch (Exception $e) {
+        catch (\Exception $e) {
             exit('Вы не туда попали!');
         }
                 
         // создаем объект контроллера
-        $controller = new $controllerName;
+        $controller = new $controllerNameNamespace;
         $action = $actionName;
         
         try {
@@ -61,10 +66,10 @@ class Route
         		$controller->$action($id);
         	}
         	else {
-        		throw new Exception();
+        		throw new \Exception();
         	}
         }
-        catch (Exception $e) {
+        catch (\Exception $e) {
             exit('Вы не туда попали!');
         }
     }

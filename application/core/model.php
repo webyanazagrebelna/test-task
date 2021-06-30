@@ -1,4 +1,7 @@
 <?php
+
+namespace Application\Core;
+
 class Model
 {
 	private $link;
@@ -7,17 +10,17 @@ class Model
     {
         // создание базы данных
         try {
-        	$link = new PDO("mysql:host=localhost", "nikolay", "nikolay");
+        	$link = new \PDO("mysql:host=localhost", "nikolay", "nikolay");
         }
-       	catch (PDOException $e) {
+       	catch (\PDOException $e) {
        		exit('not comnnect db');
        	} 
         $link->query('CREATE DATABASE IF NOT EXISTS adressbook');
         // создание таблиц
 		try {        
-        $link = new PDO("mysql:host=localhost; dbname=adressbook", "nikolay", "nikolay");
+        $link = new \PDO("mysql:host=localhost; dbname=adressbook", "nikolay", "nikolay");
         }    
-       	catch (PDOException $e) {
+       	catch (\PDOException $e) {
        		exit('not comnnect db');
        	} 
 		$link->query('CREATE TABLE IF NOT EXISTS adress(id INTEGER PRIMARY KEY AUTO_INCREMENT, date DATETIME, name CHAR(50), surname CHAR(50), phone CHAR(50), street CHAR(50), city CHAR(50), country CHAR(50))');
@@ -30,9 +33,9 @@ class Model
 		$this->link->query("GRANT SELECT,DELETE,INSERT,UPDATE ON adressbook.adress TO admin@localhost");
 		$this->link->query("FLUSH PRIVILEGES");
 		try {
-		$linkAdmin = new PDO("mysql:host=localhost; dbname=adressbook", "admin", "12345");
+		$linkAdmin = new \PDO("mysql:host=localhost; dbname=adressbook", "admin", "12345");
 		}
-       	catch (PDOException $e) {
+       	catch (\PDOException $e) {
        		exit('not comnnect db');
        	} 
 		return $linkAdmin;    	

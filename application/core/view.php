@@ -1,4 +1,7 @@
 <?php
+
+namespace Application\Core;
+
 class View
 {
     function generate($viewTemplate, $viewContent, $pageTitle=null, $res=null, $y=null, $z=null)
