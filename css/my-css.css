@@ -20,8 +20,9 @@ body {
 .modal-windows {
 	background-color: black;
 }
-{{-- footer { --}}
-	{{-- position: fixed; /* Фиксированное положение */ --}}
-	{{-- bottom: 0; /* Прижимаем к низу экрана */ --}}
-{{-- } --}}
+footer {
+	width: 100%;
+	position: fixed; /* Фиксированное положение */ 
+	bottom: 0; /* Прижимаем к низу экрана */ 
+}
 
