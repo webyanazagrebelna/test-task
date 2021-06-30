@@ -10,7 +10,7 @@ class Model
     {
         // создание базы данных
         try {
-        	$link = new \PDO("mysql:host=localhost", "nikolay", "nikolay");
+        	$link = new \PDO("mysql:host=localhost", "user-db", "pass-db");
         }
        	catch (\PDOException $e) {
        		exit('not comnnect db');
@@ -18,7 +18,7 @@ class Model
         $link->query('CREATE DATABASE IF NOT EXISTS adressbook');
         // создание таблиц
 		try {        
-        $link = new \PDO("mysql:host=localhost; dbname=adressbook", "nikolay", "nikolay");
+        $link = new \PDO("mysql:host=localhost; dbname=adressbook", "user-db", "pass-db");
         }    
        	catch (\PDOException $e) {
        		exit('not comnnect db');
