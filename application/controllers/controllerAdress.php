@@ -34,8 +34,13 @@ class ControllerAdress extends Controller
 	function edit($id)
 	{
 		if (!empty($_POST)) {
-			$comment = strip_tags($_POST['comment']);
-			$this->model->editIsset($id, $comment);
+   			$name = strip_tags($_POST['name']);
+   			$surname = strip_tags($_POST['surname']);
+   			$phone = strip_tags($_POST['phone']);
+   			$street = strip_tags($_POST['street']);
+   			$city = strip_tags($_POST['city']);
+   			$country = strip_tags($_POST['country']);
+			$this->model->editIsset($id, $name, $surname, $phone, $street, $city, $country);
 			header('Location: /adress/list/'); 
 		}
 		else {

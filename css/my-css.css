@@ -1,8 +1,8 @@
 body {
-	background-image: url(/images/main.jpg);
-	background-repeat: no-repeat;
+	/* background-image: url(/images/main.jpg); */
+	/* background-repeat: no-repeat; */
 	/* background-position: 50% 20%; */
-	background-size: cover;
+	/* background-size: cover; */
 	color: black;
 }
 .nav a {

@@ -8,12 +8,12 @@
   <title>adressbook</title>
 
   <!-- Bootstrap -->
-  <link href="css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="css/font-awesome.min.css">
-  <link rel="stylesheet" href="css/animate.css">
-  <link href="css/prettyPhoto.css" rel="stylesheet">
-  <link href="css/style.css" rel="stylesheet" />
-  <link href="css/my-css.css" rel="stylesheet" />
+  <link href="/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/animate.css">
+  <link href="/css/prettyPhoto.css" rel="stylesheet">
+  <link href="/css/style.css" rel="stylesheet" />
+  <link href="/css/my-css.css" rel="stylesheet" />
 </head>
 
 <body>

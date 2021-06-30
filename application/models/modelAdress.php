@@ -24,25 +24,13 @@ class ModelAdress extends Model
         return $res;
 	}
 	
-	function editIsset($id, $comment) {
-		$res = $this->linkAdmin()->prepare('UPDATE adress SET comment=? WHERE id=?');
-		$res->execute(array($comment, $id));
+	function editIsset($id, $name, $surname, $phone, $street, $city, $country) {
+		$res = $this->linkAdmin()->prepare('UPDATE adress SET date=NOW(), name=?, surname=?, phone=?, street=?, city=?, country=? WHERE id=?');
+		$res->execute(array($name, $surname, $phone, $street, $city, $country, $id));
 	}
 
 	function del($id) {
 		$res = $this->linkAdmin()->prepare('DELETE FROM adress WHERE id=?');
 		$res->execute(array($id));
 	}	
-
-	function login() {
-		$res = $this->linkAdmin()->prepare('SELECT * FROM users');
-		$res->execute();
-		$res = $res->fetch();
-		return $res;
-	}
-
-	function createPass($login, $password) {
-		$res = $this->linkAdmin()->prepare('UPDATE users SET login=?, password=? WHERE id_user=1');
-		$res->execute(array($login, $password));
-	}
 }
