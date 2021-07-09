@@ -23,7 +23,7 @@
         <div class="container">
           <div class="navbar-header">
             <div class="navbar-brand">
-              <a href="index.html"><h1><span>Adress</span>book</h1></a>
+              <a href="/index.html"><h1><span>Adress</span>book</h1></a>
             </div>
           </div>
 
