@@ -31,12 +31,12 @@ class ControllerAdress extends Controller
 	function add()
 	{
    		if (!empty($_POST)) {
-   			$name = strip_tags($_POST['name']);
-   			$surname = strip_tags($_POST['surname']);
-   			$phone = strip_tags($_POST['phone']);
-   			$street = strip_tags($_POST['street']);
-   			$city = strip_tags($_POST['city']);
-   			$country = strip_tags($_POST['country']);
+   			$name = trim(strip_tags($_POST['name']));
+   			$surname = trim(strip_tags($_POST['surname']));
+   			$phone = trim(strip_tags($_POST['phone']));
+   			$street = trim(strip_tags($_POST['street']));
+   			$city = trim(strip_tags($_POST['city']));
+   			$country = trim(strip_tags($_POST['country']));
 
    			$name = substr($name, 0, 50);
    			$surname = substr($surname, 0, 50);
@@ -56,12 +56,12 @@ class ControllerAdress extends Controller
 	function edit($id)
 	{
 		if (!empty($_POST)) {
-   			$name = strip_tags($_POST['name']);
-   			$surname = strip_tags($_POST['surname']);
-   			$phone = strip_tags($_POST['phone']);
-   			$street = strip_tags($_POST['street']);
-   			$city = strip_tags($_POST['city']);
-   			$country = strip_tags($_POST['country']);
+   			$name = trim(strip_tags($_POST['name']));
+   			$surname = trim(strip_tags($_POST['surname']));
+   			$phone = trim(strip_tags($_POST['phone']));
+   			$street = trim(strip_tags($_POST['street']));
+   			$city = trim(strip_tags($_POST['city']));
+   			$country = trim(strip_tags($_POST['country']));
 
    			$name = substr($name, 0, 50);
    			$surname = substr($surname, 0, 50);
